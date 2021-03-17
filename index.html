@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candyland Clone!</title>
+    <link rel = "stylesheet" href = "candyland.css">
+</head>
+<body>
+    <h1>Let's Play Candyland!</h1>
+    <h2>Instructions</h2>
+    <p1>To play, first select the number of players (up to four). Each player rolls a six-sided die and moves as many spaces as the number they roll. The first player to the end of the board wins!</p1>
+    <h2>Number of Players</h2>
+    <form>
+        <label> Number of players playing the game (between two and four).
+            <input placeholder = "Number of players." type = "number" id = "player-count">
+        </label>
+        <button id = "start-game">Start Game</button>
+    </form>
+    <label>Current Player: <div id = current-player></div></label>
+    <button id = "roll">Roll!</button>
+    <h2>The Board</h2>
+    <div id = "board"></div>
+    <h2>Roll History:</h2>
+    <div id = "roll-history"></div>
+    <script src = "candyland.js"></script>
+</body>
+</html>

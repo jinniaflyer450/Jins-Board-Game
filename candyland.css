@@ -1,0 +1,85 @@
+.space{
+    height: 80px;
+    width: 80px;
+    border: solid black;
+    border-width: 2px;
+    margin: 0px 2px;
+}
+
+#space_2, #space_3{
+    background-color:hsl(275, 74%, 95%)
+}
+
+#space_4, #space_5{
+    background-color: hsl(275, 74%, 90%);
+}
+
+#space_6, #space_7{
+    background-color: hsl(275, 74%, 85%)
+}
+
+#space_8, #space_9{
+    background-color: hsl(275, 74%, 80%)
+}
+
+#space_10, #space_11{
+    background-color: hsl(275, 74%, 75%)
+}
+
+#space_12, #space_13{
+    background-color: hsl(275, 74%, 70%)
+}
+
+#space_14, #space_15{
+    background-color: hsl(275, 74%, 65%)
+}
+
+#space_16, #space_17{
+    background-color:hsl(275, 74%, 60%)
+}
+
+#space_18, #space_19{
+    background-color: hsl(275, 74%, 55%)
+}
+
+table{
+    border: 4px solid black;
+}
+
+.piece{
+    height: 20px;
+    width: 20px;
+    margin: 0px;
+}
+
+#p1{
+    background-color: blue;
+    position: relative;
+    top: 0%;
+    left: 0%;
+}
+
+#p2{
+    background-color: red;
+    position: relative;
+    top: 0%;
+    right: 0%;
+}
+
+#p3{
+    background-color: green;
+    position: relative;
+    bottom: 0%;
+    left: 0%;
+}
+
+#p4{
+    background-color: purple;
+    position: relative;
+    bottom: 0%;
+    right: 0%;
+}
+
+#current-player{
+    display: inline;
+}
