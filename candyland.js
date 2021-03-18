@@ -46,13 +46,18 @@ function setPlayerCount(){
 }
 
 function createPieces(){
-    let playerCount = setPlayerCount();
-    for(let player = 1; player <= playerCount; player++){
-        playerPiece = document.createElement('div');
-        playerPiece.classList.add('piece');
-        playerPiece.setAttribute('id', `p${player}`);
-        document.querySelector('#space_0').append(playerPiece);
-        board.set(player, 0);
+    if(document.querySelector(`#p1`)){
+        alert('Game already in progress!')
+    }
+    else{
+        let playerCount = setPlayerCount();
+        for(let player = 1; player <= playerCount; player++){
+            playerPiece = document.createElement('div');
+            playerPiece.classList.add('piece');
+            playerPiece.setAttribute('id', `p${player}`);
+            document.querySelector('#space_0').append(playerPiece);
+            board.set(player, 0);
+        }
     }
 }
 
@@ -67,14 +72,18 @@ function updateCurrPlayerDom(){
 
 function movePieceHtml(){
     let currPiece = document.querySelector(`#p${currPlayer}`);
-    let formerSpace = currPiece.parentElement;
-    let newSpace = document.querySelector(`#space_${board.get(currPlayer)}`);
-    formerSpace.removeChild(currPiece);
-    newSpace.append(currPiece);
+    if(!currPiece){}
+    else{
+        let formerSpace = currPiece.parentElement;
+        let newSpace = document.querySelector(`#space_${board.get(currPlayer)}`);
+        formerSpace.removeChild(currPiece);
+        newSpace.append(currPiece);
+    }
 }
 
 function movePiece(){
     let spacesMoved = roll();
+    checkForWin(spacesMoved);
     let rollResults = document.createElement('p');
     let rollHistory = document.querySelector('#roll-history');
     rollResults.innerText = `Player ${currPlayer} rolled a ${spacesMoved}.`
@@ -96,11 +105,27 @@ function movePiece(){
     updateCurrPlayerDom();
 }
 
+function checkForWin(spacesMoved){
+    if(board.get(currPlayer) + spacesMoved >= 19){
+        alert(`Player ${currPlayer} won!`);
+        clearBoard();
+    }
+}
+
+function clearBoard(){
+    let pieces = document.querySelectorAll('.piece');
+    for(piece of pieces){
+        piece.remove();
+    }
+    board.clear();
+}
+
 createHtmlBoard();
 addDirections();
 document.querySelector('#start-game').addEventListener('click', function(e){
     e.preventDefault();
     createPieces();
+    currPlayer = 1;
     updateCurrPlayerDom();
 })
 
