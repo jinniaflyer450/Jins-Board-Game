@@ -42,7 +42,14 @@ function addDirections(){
 }
 
 function setPlayerCount(){
-    return document.querySelector('#player-count').value;
+    let count = document.querySelector('#player-count').value;
+    if(count >= 2 && count <= 4){
+        return count;
+    }
+    else{
+        alert('Invalid player count!')
+        return;
+    }
 }
 
 function createPieces(){
@@ -58,6 +65,7 @@ function createPieces(){
             document.querySelector('#space_0').append(playerPiece);
             board.set(player, 0);
         }
+        updateCurrPlayerDom();
     }
 }
 
@@ -126,7 +134,6 @@ document.querySelector('#start-game').addEventListener('click', function(e){
     e.preventDefault();
     createPieces();
     currPlayer = 1;
-    updateCurrPlayerDom();
 })
 
 document.querySelector('#roll').addEventListener('click', function(e){
