@@ -97,6 +97,7 @@ function movePiece(){
 }
 
 createHtmlBoard();
+addDirections();
 document.querySelector('#start-game').addEventListener('click', function(e){
     e.preventDefault();
     createPieces();
