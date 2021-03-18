@@ -6,6 +6,22 @@
     margin: 0px 2px;
 }
 
+/*Learned how to work with images here: https://developer.mozilla.org/en-US/docs/Web/CSS/background-image */
+.right{
+    background-image: url(https://raw.githubusercontent.com/jinniaflyer450/Jins-Board-Game/master/arrow_right.png)
+}
+
+.left{
+    background-image: url(https://raw.githubusercontent.com/jinniaflyer450/Jins-Board-Game/master/arrow_left.png)
+}
+
+.down{
+    background-image: url(https://raw.githubusercontent.com/jinniaflyer450/Jins-Board-Game/master/arrow_down.png)
+}
+
+#space_0{
+    background-image: url(https://raw.githubusercontent.com/jinniaflyer450/Jins-Board-Game/master/Start.png)
+}
 #space_2, #space_3{
     background-color:hsl(275, 74%, 95%);
 }
